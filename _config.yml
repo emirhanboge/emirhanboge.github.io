@@ -129,7 +129,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 
 blog_name: posts # the name of your blog
 blog_description: Things I find interesting
-permalink: /posts/:year/:title/
+permalink: /posts/:year/:month/:day/:title/
 lsi: false # produce an index for related posts
 
 # Pagination
