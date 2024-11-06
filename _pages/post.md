@@ -6,15 +6,14 @@ nav: true
 nav_order: 2
 ---
 <div class="post-list-container">
-  <!-- Posts list -->
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
         <h3>
           {% if post.title %}
-            <a class="post-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <a class="post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
           {% else %}
-            <a class="post-title" href="{{ post.url | relative_url }}">{{ post.path | split: '/' | last | replace: '-', ' ' | replace: '.md', '' }}</a>
+            <a class="post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.path | split: '/' | last | replace: '-', ' ' | replace: '.md', '' }}</a>
           {% endif %}
         </h3>
         
@@ -31,14 +30,15 @@ nav_order: 2
 
         {% if post.categories.size > 0 or post.tags.size > 0 %}
           <p class="post-tags">
-            <a href="{{ post.date | date: '%Y' | prepend: '/blog/' | prepend: site.baseurl }}">
-              <i class="fa-solid fa-calendar fa-sm"></i> {{ post.date | date: '%Y' }}
+            {% assign year = post.date | date: '%Y' %}
+            <a href="{{ '/blog/' | append: year | prepend: site.baseurl }}">
+              <i class="fa-solid fa-calendar fa-sm"></i> {{ year }}
             </a>
 
             {% if post.categories.size > 0 %}
               &nbsp; &middot; &nbsp;
               {% for category in post.categories %}
-                <a href="{{ category | slugify | prepend: '/blog/category/' | prepend: site.baseurl }}">
+                <a href="{{ '/blog/category/' | append: category | slugify | prepend: site.baseurl }}">
                   <i class="fa-solid fa-tag fa-sm"></i> {{ category }}</a>
                 {% unless forloop.last %}&nbsp;{% endunless %}
               {% endfor %}
@@ -47,7 +47,7 @@ nav_order: 2
             {% if post.tags.size > 0 %}
               &nbsp; &middot; &nbsp;
               {% for tag in post.tags %}
-                <a href="{{ tag | slugify | prepend: '/blog/tag/' | prepend: site.baseurl }}">
+                <a href="{{ '/blog/tag/' | append: tag | slugify | prepend: site.baseurl }}">
                   <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}</a>
                 {% unless forloop.last %}&nbsp;{% endunless %}
               {% endfor %}
