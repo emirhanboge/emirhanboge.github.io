@@ -10,11 +10,7 @@ nav_order: 2
     {% for post in site.posts %}
       <li>
         <h3>
-          {% if post.title %}
-            <a class="post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-          {% else %}
-            <a class="post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.path | split: '/' | last | replace: '-', ' ' | replace: '.md', '' }}</a>
-          {% endif %}
+          <a class="post-title" href="/blog/{{ post.date | date: '%Y/%m/%d' }}/{{ post.title | slugify }}">{{ post.title }}</a>
         </h3>
         
         {% if post.description %}
@@ -31,14 +27,14 @@ nav_order: 2
         {% if post.categories.size > 0 or post.tags.size > 0 %}
           <p class="post-tags">
             {% assign year = post.date | date: '%Y' %}
-            <a href="{{ '/blog/' | append: year | prepend: site.baseurl }}">
+            <a href="/blog/{{ year }}">
               <i class="fa-solid fa-calendar fa-sm"></i> {{ year }}
             </a>
 
             {% if post.categories.size > 0 %}
               &nbsp; &middot; &nbsp;
               {% for category in post.categories %}
-                <a href="{{ '/blog/category/' | append: category | slugify | prepend: site.baseurl }}">
+                <a href="/blog/category/{{ category | slugify }}">
                   <i class="fa-solid fa-tag fa-sm"></i> {{ category }}</a>
                 {% unless forloop.last %}&nbsp;{% endunless %}
               {% endfor %}
@@ -47,7 +43,7 @@ nav_order: 2
             {% if post.tags.size > 0 %}
               &nbsp; &middot; &nbsp;
               {% for tag in post.tags %}
-                <a href="{{ '/blog/tag/' | append: tag | slugify | prepend: site.baseurl }}">
+                <a href="/blog/tag/{{ tag | slugify }}">
                   <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}</a>
                 {% unless forloop.last %}&nbsp;{% endunless %}
               {% endfor %}
