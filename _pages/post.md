@@ -10,7 +10,10 @@ nav_order: 2
     {% for post in site.posts %}
       <li>
         <h3>
-          <a class="post-title" href="/posts/{{ post.date | date: '%Y/%m/%d' }}/{{ post.title | slugify }}">{{ post.title }}</a>
+          {% if post.title %}
+            {% assign url_title = post.title | slugify: "latin" %}
+            <a class="post-title" href="{{ post.url }}">{{ post.title }}</a>
+          {% endif %}
         </h3>
         
         {% if post.description %}
@@ -26,15 +29,14 @@ nav_order: 2
 
         {% if post.categories.size > 0 or post.tags.size > 0 %}
           <p class="post-tags">
-            {% assign year = post.date | date: '%Y' %}
-            <a href="/posts/{{ year }}">
-              <i class="fa-solid fa-calendar fa-sm"></i> {{ year }}
+            <a href="{{ post.date | date: '%Y' | prepend: '/posts/' }}">
+              <i class="fa-solid fa-calendar fa-sm"></i> {{ post.date | date: '%Y' }}
             </a>
 
             {% if post.categories.size > 0 %}
               &nbsp; &middot; &nbsp;
               {% for category in post.categories %}
-                <a href="/posts/category/{{ category | slugify }}">
+                <a href="{{ category | slugify | prepend: '/posts/category/' }}">
                   <i class="fa-solid fa-tag fa-sm"></i> {{ category }}</a>
                 {% unless forloop.last %}&nbsp;{% endunless %}
               {% endfor %}
@@ -43,7 +45,7 @@ nav_order: 2
             {% if post.tags.size > 0 %}
               &nbsp; &middot; &nbsp;
               {% for tag in post.tags %}
-                <a href="/posts/tag/{{ tag | slugify }}">
+                <a href="{{ tag | slugify | prepend: '/posts/tag/' }}">
                   <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}</a>
                 {% unless forloop.last %}&nbsp;{% endunless %}
               {% endfor %}
