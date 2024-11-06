@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Notes on: What does BERT look at? An Analysis of BERT’s Attention (ACL 2019)
+title: Notes on the paper "What does BERT look at? An Analysis of BERT’s Attention (ACL 2019)"
 date: 2024-11-06
 description: My notes on the paper.
-tags: research-notes
-categories: research-notes
+tags: [bert, attention, nlp]
+categories: [research-notes]
 featured: true
 ---
 
@@ -42,7 +42,7 @@ So I believe the paper shown that BERT reflects linguistic phenomena in its atte
 ### Introduction
 Heads learn different types of information, in this case linguistic information. Language models like BERT by training on unlabeled data inherently learns linguistic information, thus there is no need for explicit linguistic features.
 
-# References
+#### References
 ```bibtex
 @article{clark2019does,
   title={What Does Bert Look At? An Analysis of Bert’s Attention},
