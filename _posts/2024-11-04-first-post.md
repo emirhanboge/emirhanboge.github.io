@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What does BERT look at? An Analysis of BERT’s Attention (ACL 2019)
+title: Notes on: What does BERT look at? An Analysis of BERT’s Attention (ACL 2019)
 date: 2024-11-06
 description: My notes on the paper.
 tags: research-notes
@@ -8,9 +8,11 @@ categories: research-notes
 featured: true
 ---
 
+My notes on the paper by Kevin Clark, Urvashi Khandelwal, Omer Levy, and Christopher D. Manning. The paper was presented at ACL 2019. The paper can be found [here](https://arxiv.org/abs/1906.04341).
+
 I do 3 passes of reading a paper. The first pass is to get a general idea of what the paper is about. The second pass is to understand the details of the paper. The third pass is to understand the paper in depth.
 
-For this particular paper I did {FILL IN} passes of reading.
+For this particular paper I did only the first pass because I wanted to understand the general idea of the paper.
 
 # First Pass
 
@@ -40,4 +42,12 @@ So I believe the paper shown that BERT reflects linguistic phenomena in its atte
 ### Introduction
 Heads learn different types of information, in this case linguistic information. Language models like BERT by training on unlabeled data inherently learns linguistic information, thus there is no need for explicit linguistic features.
 
-# Second Pass
+# References
+```bibtex
+@article{clark2019does,
+  title={What Does Bert Look At? An Analysis of Bert’s Attention},
+  author={Clark, Kevin},
+  journal={arXiv preprint arXiv:1906.04341},
+  year={2019}
+}
+```
