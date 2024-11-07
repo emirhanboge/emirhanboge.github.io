@@ -3,7 +3,7 @@ layout: post
 title: Notes on the paper - What does BERT look at? An Analysis of BERT’s Attention (ACL 2019)
 date: 2024-11-06
 description: My notes on the paper.
-tags: [bert, attention, nlp]
+tags: [bert, attention, interpretability]
 categories: [research-notes]
 featured: true
 ---
