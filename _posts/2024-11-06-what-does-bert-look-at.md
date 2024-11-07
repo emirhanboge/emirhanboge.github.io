@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Notes on the paper - What does BERT look at? An Analysis of BERT’s Attention (ACL 2019)
+permalink: /posts/2024/11/06/what-does-bert-look-at/
 date: 2024-11-06
 description:
 tags: [bert, attention, interpretability]
