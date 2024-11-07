@@ -10,8 +10,8 @@ nav_order: 2
     {% for post in site.posts %}
       <li>
         <h3>
-          <!-- Using the same permalink structure as _config.yml -->
-          <a class="post-title" href="/posts/{{ post.date | date: '%Y/%m/%d' }}/{{ post.title | slugify }}">{{ post.title }}</a>
+          <!-- Use the post's permalink instead of constructing URL -->
+          <a class="post-title" href="{{ post.permalink | default: post.url }}">{{ post.title }}</a>
         </h3>
         
         {% if post.description %}
@@ -27,7 +27,6 @@ nav_order: 2
 
         <p class="post-tags">
           {% assign year = post.date | date: '%Y' %}
-          <!-- Year archive link -->
           <a href="/posts/{{ year }}">
             <i class="fa-solid fa-calendar fa-sm"></i> {{ year }}
           </a>
