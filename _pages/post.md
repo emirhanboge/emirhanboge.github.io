@@ -10,7 +10,8 @@ nav_order: 2
     {% for post in site.posts %}
       <li>
         <h3>
-          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+          <!-- Using the same permalink structure as _config.yml -->
+          <a class="post-title" href="/posts/{{ post.date | date: '%Y/%m/%d' }}/{{ post.title | slugify }}">{{ post.title }}</a>
         </h3>
         
         {% if post.description %}
@@ -25,14 +26,16 @@ nav_order: 2
         </p>
 
         <p class="post-tags">
-          <a href="{{ site.baseurl }}/posts/{{ post.date | date: '%Y' }}">
-            <i class="fa-solid fa-calendar fa-sm"></i> {{ post.date | date: '%Y' }}
+          {% assign year = post.date | date: '%Y' %}
+          <!-- Year archive link -->
+          <a href="/posts/{{ year }}">
+            <i class="fa-solid fa-calendar fa-sm"></i> {{ year }}
           </a>
 
           {% if post.categories.size > 0 %}
             &nbsp; &middot; &nbsp;
             {% for category in post.categories %}
-              <a href="{{ site.baseurl }}/posts/category/{{ category | slugify }}">
+              <a href="/posts/category/{{ category | slugify }}">
                 <i class="fa-solid fa-tag fa-sm"></i> {{ category }}</a>
               {% unless forloop.last %}&nbsp;{% endunless %}
             {% endfor %}
@@ -41,7 +44,7 @@ nav_order: 2
           {% if post.tags.size > 0 %}
             &nbsp; &middot; &nbsp;
             {% for tag in post.tags %}
-              <a href="{{ site.baseurl }}/posts/tag/{{ tag | slugify }}">
+              <a href="/posts/tag/{{ tag | slugify }}">
                 <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}</a>
               {% unless forloop.last %}&nbsp;{% endunless %}
             {% endfor %}
