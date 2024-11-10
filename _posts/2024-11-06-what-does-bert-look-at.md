@@ -5,7 +5,7 @@ permalink: /posts/2024/11/06/what-does-bert-look-at/
 date: 2024-11-06
 description:
 tags: [bert, attention, interpretability]
-categories: [research-notes]
+categories: [lit-notes]
 featured: true
 ---
 
