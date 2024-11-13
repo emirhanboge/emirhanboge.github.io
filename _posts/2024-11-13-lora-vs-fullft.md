@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Notes on the paper - LoRA vs Full Fine-Tuning: An Illusion of Equivalence
+title: Notes on the paper - LoRA vs Full Fine-Tuning:An Illusion of Equivalence
 permalink: /posts/2024/11/13/lora-vs-fullft/
 date: 2024-11-13
 description:
@@ -22,7 +22,9 @@ These have different structure considering their singular value decomposition (S
 
 Fine-tuned models generalize outside the adaptation task's distribution but LoRA might have some problems with this. LoRA has **intruder dimensions**, as called by the authors, that are not seen in the full fine-tuning. LoRA with intruder dimensions might achieve comparable performance to full fine-tuning but when used with multiple tasks the performance drops.
 
-**LoRA and full fine-tuning use different subspaces of the weight matrix.**
+**LoRA and full fine-tuning use different subspaces of the weight matrix (intruder dimensions).**
+
+**LoRA with intruder dimensions forgets pretraining distribution.**
 
 LoRA and full fiine-tuning have differences in neuron's angle and magnitude (Liu et al., 2024).
 
