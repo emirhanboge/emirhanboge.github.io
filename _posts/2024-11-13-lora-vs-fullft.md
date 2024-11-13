@@ -9,7 +9,7 @@ categories: [lit-notes]
 featured: true
 ---
 
-My notes on the paper by Reece Shuttleworth, Jacob Andreas, Antonio Torralba, and Pratyusha Sharma. The paper was presented at NeurIPS 2024. The paper can be found [here](https://arxiv.org/pdf/2410.21228v1).
+My notes on the paper by Reece Shuttleworth, Jacob Andreas, Antonio Torralba, and Pratyusha Sharma. The paper can be found [here](https://arxiv.org/pdf/2410.21228v1).
 
 # First Pass
 Are Full Fine-Tuning and LoRA equivalent?

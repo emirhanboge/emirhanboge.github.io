@@ -9,7 +9,7 @@ categories: [lit-notes]
 featured: true
 ---
 
-My notes on the paper by Oleksiy Ostapenko, Zhan Su, Edoardo Maria Ponti, Laurent Charlin, Nicolas Le Roux, Matheus Pereira, Lucas Caccia, and Alessandro Sordoni. The paper was presented at NeurIPS 2024. The paper can be found [here](https://arxiv.org/pdf/2405.11157).
+My notes on the paper by Oleksiy Ostapenko, Zhan Su, Edoardo Maria Ponti, Laurent Charlin, Nicolas Le Roux, Matheus Pereira, Lucas Caccia, and Alessandro Sordoni. The paper can be found [here](https://arxiv.org/pdf/2405.11157).
 
 # First Pass
 Parameter-efficient adaptations of LLMs are significant => Can we reuse trained adapters across tasks?
