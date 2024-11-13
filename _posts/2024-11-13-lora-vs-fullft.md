@@ -76,3 +76,16 @@ LoRA has intruder dimensions that affect pretrained weights' impact. This is det
 
 ---
 
+# Third Pass
+- Can we modify LoRA to prevent the formation of intruder dimensions while maintaining its parameter efficiency?
+- How do intruder dimensions interact when multiple LoRA adapters are combined?
+
+### References
+```bibtex
+@article{shuttleworth2024lora,
+  title={LoRA vs Full Fine-tuning: An Illusion of Equivalence},
+  author={Shuttleworth, Reece and Andreas, Jacob and Torralba, Antonio and Sharma, Pratyusha},
+  journal={arXiv preprint arXiv:2410.21228},
+  year={2024}
+}
+```
