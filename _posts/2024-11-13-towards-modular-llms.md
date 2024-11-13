@@ -45,3 +45,13 @@ MBC and Arrow enhances the performance compared to Full Fine-Tuning.
 # Third Pass
 - Can we improve upon K-means clustering, and find the number of clusters automatically? Maybe using the semantics of the tasks (e.g. using the task descriptions).
 - Can we also share parameters across clusters?
+
+### References
+```bibtex
+@article{ostapenko2024towards,
+  title={Towards modular llms by building and reusing a library of loras},
+  author={Ostapenko, Oleksiy and Su, Zhan and Ponti, Edoardo Maria and Charlin, Laurent and Roux, Nicolas Le and Pereira, Matheus and Caccia, Lucas and Sordoni, Alessandro},
+  journal={arXiv preprint arXiv:2405.11157},
+  year={2024}
+}
+```
